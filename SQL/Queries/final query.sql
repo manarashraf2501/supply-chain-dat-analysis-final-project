@@ -71,19 +71,6 @@ select*, round (Unit_Cost,2) as Cost_per_unit, round (Selling_Price,2) as Sell_P
    where Profitt is null --checked 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
  -- checking on nulls 
  select* 
  from suppliers
@@ -182,6 +169,10 @@ select*, round (Unit_Cost,2) as Cost_per_unit, round (Selling_Price,2) as Sell_P
 
 
 
+  alter table inventory
+ add constraint fk_inv_product
+ foreign key (SKU) references our_products
+
   
  alter table Customer
  add constraint pk_customer
@@ -190,6 +181,28 @@ select*, round (Unit_Cost,2) as Cost_per_unit, round (Selling_Price,2) as Sell_P
   alter table orders_table
  add constraint fk_orders_customer
  foreign key (Customer_ID) references Customer
+
+
+
+
+
+ 
+--data intigraty compared to python
+ select sum(profitt)/ count (Order_ID) as avg_profit_per_order 
+ from orders_table 
+ select sum (profitt) 
+ from orders_table
+
+ select count(Order_ID)
+ from orders_table
+
+ select round (sum(Revenue),2)
+ from new_sales
+
+ select Product_Name as p_name , Revenue as R
+ from our_Products p join new_sales  ns on  p.SKU = ns.SKU 
+ order by Revenue desc
+
 
 
 
