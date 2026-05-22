@@ -87,7 +87,7 @@ returns_products = pd.merge(returns, orders_products, on='Order_ID', how='left')
 # # dashboard grid
 color2=["#FFF9D2","#FFEBCC","#BFDDF0","#8CC0EB","#2F2FE4"]
 st.title("📊 Supply Chain Dashboard")
-st.markdown("inventory & returns performance")
+st.markdown("returns performance")
 st.divider()
 col1, col2, col3 = st.columns(3)
 with col1:
