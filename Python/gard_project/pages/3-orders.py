@@ -109,7 +109,7 @@ with col1:
          st.metric(label="Avg Revenue Per Order", value=f"{avg_rev_per_order:.1f}$")
 with col2:
     with st.container(border=True):
-        st.metric(label="Avg Cost Per Order", value=f"{avg_cost_per_order:.2f} $")
+        st.metric(label="Avg Cost Per Order", value=f"{avg_cost_per_order:.1f} $")
 with col3:
     with st.container(border=True):
         st.metric(label="Avg Delivery Time", value=f"{average_delivery_time} days")
