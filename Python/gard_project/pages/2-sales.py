@@ -75,7 +75,7 @@ with col2:
         st.metric(label="Highest Month By Sales", value= highest_sales_month)
 with col3:
     with st.container(border=True):
-        st.metric(label="Net Revenue", value=f"{actual_revenue/1e6:.2f}M$")
+        st.metric(label="Net Revenue", value=f"{actual_revenue/1e6:.1f}M$")
 
 
 with st.container(border=True):
