@@ -97,7 +97,7 @@ orders_products = pd.merge(orders, products, on='SKU', how='left')
 
 #dashboard
 
-colors=["#00cfc8","#ff9da7"]
+colors=["#2F2FE4","#FFF9D2","#FFEBCC","#BFDDF0","#8CC0EB"]
 
 # # dashboard grid
 st.title("📊 Supply Chain Dashboard")
