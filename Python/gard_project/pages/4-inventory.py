@@ -66,7 +66,6 @@ orders['Shipping_Status'] = orders.apply(calculate_order_delay, axis=1)
 
 #calculating returned products
 returned= returns['Returned_Qty'].sum()
-refund_amount = returns['Refund_Amount'].sum()
 
 #calculating delaying in orders and regions 
 total_orders = orders['Order_ID'].nunique()
@@ -86,11 +85,11 @@ returns_products = pd.merge(returns, orders_products, on='Order_ID', how='left')
 
 # #dashboard
 # # dashboard grid
-color2=["#00cfc8","#00ffc8","#ffff7f","#0be7ff","#0A7C6E","#6FD1D7"]
+color2=["#FFF9D2","#FFEBCC","#BFDDF0","#8CC0EB","#2F2FE4"]
 st.title("📊 Supply Chain Dashboard")
 st.markdown("inventory & returns performance")
 st.divider()
-col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3 = st.columns(3)
 with col1:
         with st.container(border=True):
          st.metric(label="Delayed Orders", value=f"{late_orders_percentage:.0f}%")
@@ -99,7 +98,7 @@ with col2:
         st.metric(label="Delayed Region", value=max_late_region)
 with col3:
     with st.container(border=True):
-        st.metric(label="Returned Products", value=f"{returned/1e3:.2f}K")
+        st.metric(label="Returned Products", value=f"{returned/1e3:.0f}K")
 with col4:
     with st.container(border=True):
         st.metric(label="Refund Amount", value=f"{refund_amount/1e3:.0f}K $")
