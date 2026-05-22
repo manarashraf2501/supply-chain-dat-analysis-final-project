@@ -44,7 +44,7 @@ st.divider()
 col1, col2= st.columns(2)
 with col1:
         with st.container(border=True):
-         st.metric(label="Total Revenue", value=f"{total_revenue/1e6:.2f}M $")
+         st.metric(label="Total Revenue", value=f"{total_revenue/1e6:.1f}M $")
 with col2:
     with st.container(border=True):
         st.metric(label="Total Orders", value=f"{total_orders/1e3:.0f}K")
@@ -68,7 +68,7 @@ with st.container(border=True):
         x='month_name',
         y='Total_Revenue',
         markers=True,
-        color_discrete_sequence=['#007BFF']
+        color_discrete_sequence=['#2F2FE4']
     )
         fig_monthly.update_layout(
         xaxis_title="",
